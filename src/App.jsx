@@ -5,6 +5,8 @@ import confetti from 'canvas-confetti'
 import { Turns, cobinations } from './logica/Constantes'
 import { saveGameToStorage, resetGameStorage } from './logica/storage'
 import { Square } from './componentes/Square'
+import { ButtonReset } from './componentes/ButonReset'
+import {Spoiler} from 'spoiled'
 
 
 function App() {
@@ -77,7 +79,14 @@ function App() {
   return (
     <>
       < main className='board'>
-      <h1> Tic Tac Toe </h1>
+      <h1> 3 en raya</h1>
+       <ButtonReset Reset={() => {
+        setBoard(Array(9).fill(null))
+        setTurn(Turns.x)
+        setWinner(null)
+        setLog([]) 
+        resetGameStorage()
+      }}/>
       <section className='game'>
         {
           board.map((square, index) => {
@@ -96,6 +105,13 @@ function App() {
             {Turns.o}
           </Square>
         </section>
+      </section>
+      <section>
+        <Spoiler>
+          El tipico juego del gato pero llevado a otro nivel, no se permite empate <br></br>
+          solo debe haber un ganador <br></br>
+          comenzemos ........
+        </Spoiler>
       </section>
       <WinnerModal winner={winner} onClose={() => {
         setBoard(Array(9).fill(null))
