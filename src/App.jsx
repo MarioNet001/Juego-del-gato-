@@ -6,7 +6,6 @@ import { Turns, cobinations } from './logica/Constantes'
 import { saveGameToStorage, resetGameStorage } from './logica/storage'
 import { Square } from './componentes/Square'
 import { ButtonReset } from './componentes/ButonReset'
-import {Spoiler} from 'spoiled'
 
 
 function App() {
@@ -107,11 +106,6 @@ function App() {
         </section>
       </section>
       <section>
-        <Spoiler>
-          El tipico juego del gato pero llevado a otro nivel, no se permite empate <br></br>
-          solo debe haber un ganador <br></br>
-          comenzemos ........
-        </Spoiler>
       </section>
       <WinnerModal winner={winner} onClose={() => {
         setBoard(Array(9).fill(null))
