@@ -96,7 +96,9 @@ function App() {
               )
         })
       }
-        <section className='turn'>
+      </section>
+      <section>
+      <section className='turn'>
           <Square isSelected= {turn === Turns.x} >
             {Turns.x}
           </Square>
@@ -104,8 +106,6 @@ function App() {
             {Turns.o}
           </Square>
         </section>
-      </section>
-      <section>
       </section>
       <WinnerModal winner={winner} onClose={() => {
         setBoard(Array(9).fill(null))
